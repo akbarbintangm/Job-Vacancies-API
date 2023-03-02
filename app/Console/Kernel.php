@@ -8,17 +8,38 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 class Kernel extends ConsoleKernel
 {
     /**
-     * Define the application's command schedule.
+     * The Artisan commands provided by your application.
+     *
+     * @var array
      */
-    protected function schedule(Schedule $schedule): void
+    protected $commands = [
+        //
+    ];
+
+    /**
+     * Define the application's command schedule.
+     *
+     * @param Schedule $schedule
+     * @return void
+     */
+    protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('cache:prune-stale-tags')->hourly();
+        $schedule->call(function () {
+            $status1 = Artisan::call('route:clear');
+            $status2 = Artisan::call('config:clear');
+            $status3 = Artisan::call('cache:clear');
+            $status4 = Artisan::call('view:clear');
+            $status5 = Artisan::call('optimize:clear');
+        })->hourly();
     }
 
     /**
      * Register the commands for the application.
+     *
+     * @return void
      */
-    protected function commands(): void
+    protected function commands()
     {
         $this->load(__DIR__.'/Commands');
 
