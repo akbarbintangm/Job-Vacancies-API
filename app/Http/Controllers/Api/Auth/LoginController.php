@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Auth;
+namespace App\Http\Controllers\Api\Auth;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\DB;
 use GuzzleHttp\Exception\ClientException;
-use App\Http\Requests\Api\V1\Auth\LoginRequest;
+use App\Http\Requests\Api\Auth\LoginRequest;
 use CloudCreativity\LaravelJsonApi\Document\Error\Error;
 use CloudCreativity\LaravelJsonApi\Http\Controllers\JsonApiController;
 

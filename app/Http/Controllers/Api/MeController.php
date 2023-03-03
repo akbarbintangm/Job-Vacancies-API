@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1;
+namespace App\Http\Controllers\Api;
 
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -47,7 +47,7 @@ class MeController extends JsonApiController
             return response()->json($responseBody, $responseStatus)->withHeaders($responseHeaders);
         } catch (ClientException $e) {
             $errors = json_decode($e->getResponse()->getBody()->getContents(), true)['errors'];
-    
+
             $errors = collect($errors)->map(function ($error) {
                 return Error::fromArray($error);
             });

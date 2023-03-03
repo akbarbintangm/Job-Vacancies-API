@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1\Auth;
+namespace App\Http\Controllers\Api\Auth;
 
-use App\Http\Requests\Api\V1\Auth\ForgotPasswordRequest;
+use App\Http\Requests\Api\Auth\ForgotPasswordRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Password;

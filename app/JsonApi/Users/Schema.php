@@ -1,6 +1,6 @@
 <?php
 
-namespace App\JsonApi\V1\Users;
+namespace App\JsonApi\Users;
 
 use Neomerx\JsonApi\Schema\SchemaProvider;
 

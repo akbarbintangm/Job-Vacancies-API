@@ -1,6 +1,6 @@
 <?php
 
-namespace App\JsonApi\V1\Users;
+namespace App\JsonApi\Users;
 
 use CloudCreativity\LaravelJsonApi\Auth\AbstractAuthorizer;
 use Illuminate\Auth\Access\AuthorizationException;

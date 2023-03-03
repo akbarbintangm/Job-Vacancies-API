@@ -14,7 +14,7 @@ use CloudCreativity\LaravelJsonApi\Facades\JsonApi;
 |
 */
 
-Route::namespace('Api\V1\Auth')->prefix('api/v1')->middleware('json.api')->group(function () {
+Route::namespace('Api\Auth')->prefix('api')->middleware('json.api')->group(function () {
     Route::post('/login', 'LoginController');
     Route::post('/register', 'RegisterController');
     Route::post('/logout', 'LogoutController')->middleware('auth:api');
@@ -23,8 +23,7 @@ Route::namespace('Api\V1\Auth')->prefix('api/v1')->middleware('json.api')->group
 });
 
 JsonApi::register('v1')->middleware('auth:api')->routes(function ($api) {
-    $api->get('me', 'Api\V1\MeController@readProfile');
-    $api->patch('me', 'Api\V1\MeController@updateProfile');
-
+    $api->get('me', 'Api\MeController@readProfile');
+    $api->patch('me', 'Api\MeController@updateProfile');
     $api->resource('users');
 });
