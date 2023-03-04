@@ -1,6 +1,6 @@
 <?php
 
-namespace App\JsonApi\Users;
+namespace App\JsonApi\V1\Users;
 
 use App\Models\User;
 use CloudCreativity\LaravelJsonApi\Eloquent\AbstractAdapter;

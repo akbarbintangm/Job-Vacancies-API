@@ -10,11 +10,11 @@ use CloudCreativity\LaravelJsonApi\Facades\JsonApi;
 |
 | Here is where you can register API routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
+| is assigned the "api" middleware group. Enjoy building your API!a
 |
 */
 
-Route::namespace('Api\Auth')->prefix('api')->middleware('json.api')->group(function () {
+Route::namespace('Api\V1\Auth')->prefix('api/v1')->middleware('json.api')->group(function () {
     Route::post('/login', 'LoginController');
     Route::post('/register', 'RegisterController');
     Route::post('/logout', 'LogoutController')->middleware('auth:api');
@@ -23,7 +23,12 @@ Route::namespace('Api\Auth')->prefix('api')->middleware('json.api')->group(funct
 });
 
 JsonApi::register('v1')->middleware('auth:api')->routes(function ($api) {
-    $api->get('me', 'Api\MeController@readProfile');
-    $api->patch('me', 'Api\MeController@updateProfile');
+    $api->get('me', 'Api\V1\MeController@readProfile');
+    $api->patch('me', 'Api\V1\MeController@updateProfile');
     $api->resource('users');
+    // $api->get('job', 'Api\V1\JobVacancyController@readData');
+    // $api->patch('job', 'Api\V1\JobVacancyController@addData');
+    // $api->patch('job', 'Api\V1\JobVacancyController@updateData');
+    // $api->patch('job', 'Api\V1\JobVacancyController@deleteData');
+    // $api->resource('job_vacancies');
 });

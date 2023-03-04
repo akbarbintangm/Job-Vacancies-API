@@ -1,6 +1,6 @@
 <?php
 
-namespace App\JsonApi\Users;
+namespace App\JsonApi\V1\Users;
 
 use Illuminate\Validation\Rule;
 use CloudCreativity\LaravelJsonApi\Rules\HasMany;

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Api\Auth;
+namespace App\Http\Controllers\Api\V1\Auth;
 
-use App\Http\Requests\Api\Auth\ResetPasswordRequest;
+use App\Http\Requests\Api\V1\Auth\ResetPasswordRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
