@@ -32,7 +32,9 @@ class JobVacancyController extends JsonApiController
 
         $data = [
             'headers' => $headers,
+
             'query' => $request->query()
+            
         ];
 
         try {
