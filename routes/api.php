@@ -31,4 +31,5 @@ JsonApi::register('v1')->middleware('auth:api')->routes(function ($api) {
     // $api->patch('job', 'Api\V1\JobVacancyController@updateData');
     // $api->patch('job', 'Api\V1\JobVacancyController@deleteData');
     // $api->resource('job_vacancies');
+    
 });
